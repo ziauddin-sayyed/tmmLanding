@@ -31,12 +31,14 @@
             "https://www.linkedin.com/company/yourcompany"
           ],
           "contactPoint": {
-            "@type": "Sayyed",
-            "telephone": "+91-7208649034",
+            "@context": "https://schema.org",
+            "@type": "ContactPoint",
             "contactType": "Customer Service",
-            "areaServed": "IN",
-            "availableLanguage": "English"
-          }
+            "email": "contact@example.com",
+            "telephone": "+1-800-555-5555",
+            "areaServed": "Global",
+            "availableLanguage": ["English", "Spanish"]
+          }          
         }
     </script>
 
@@ -71,77 +73,12 @@
                 <nav class="collapse navbar-collapse" role="navigation">
                     <div class="nav navbar-nav js-desktop-menu">
                         <ul id="menu-main-menu" class="clearfix">
-                            <!-- <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children">
-                                <a href="#!">Buy</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="listings?type=Buy">Property For Sale</a> </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="auction">Current Auction Properties</a> </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                                <a href="#!">Rent</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="?type=Rent">PROPERTY FOR RENT</a> </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a href="">PG
-                                            / HOSTEL</a> </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                                <a href="#!">Sell</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="buying-at-auction">POST YOUR PROPERTY</a> </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="listings?type=Sold">SELL AD PACKAGES</a> </li>
-                                </ul>
-                            </li> -->
-                            <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom"> <a
-                                    href="aboutus.html">About</a> </li> -->
                             <li class="menu-item menu-item-type-custom menu-item-object-custom"> <a
                                     href="#services">Services</a> </li>
-                            <!-- <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                    href="#contact">Contact</a> </li> -->
-                            <!-- <li class="hidden-xs hidden-sm header-search"> <a href="#!" data-toggle="modal"
-                                    data-target="#search-modal" class="pull-right"> <i class="fa fa-search"></i> </a>
-                            </li> -->
                         </ul>
                     </div>
                     <div class="nav navbar-nav js-mobile-menu" style="display:none">
                         <ul id="menu-main-menu" class="clearfix">
-                            <!-- <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children">
-                                <a href="#!">Buy</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="listings?type=Buy">Property For Sale</a> </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="auction">Current Auction Properties</a> </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                                <a href="#!">Rent</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="?type=Rent">PROPERTY FOR RENT</a> </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a href="">PG
-                                            / HOSTEL</a> </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                                <a href="#!">Sell</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="buying-at-auction">POST YOUR PROPERTY</a> </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="listings?type=Sold">SELL AD PACKAGES</a> </li>
-                                </ul>
-                            </li> -->
-                            <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom"> <a
-                                    href="aboutus.html">About</a> </li> -->
                             <li class="menu-item menu-item-type-custom menu-item-object-custom"> <a
                                 href="#services">Services</a> </li>
     
@@ -549,13 +486,26 @@
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <ul class="list-unstyled footer-social">
                         <li> <a href="https://www.facebook.com/rwAdilabad" target="_blank" alt="R&W Adilabad Facebook">
-                                <i class="fa fa-facebook"></i> </a> </li>
-                        <li> <a href="https://www.instagram.com/rwAdilabad" target="_blank"
-                                alt="R&W Adilabad Instagram"> <i class="fa fa-instagram"></i> </a> </li>
-                        <li> <a href="https://twitter.com/rwAdilabad" target="_blank" alt="R&W Adilabad Twitter"> <i
-                                    class="fa fa-twitter"></i> </a> </li>
-                        <li> <a href="https://www.youtube.com/user/rwAdilabad" target="_blank"
-                                alt="R&W Adilabad Youtube"> <i class="fa fa-youtube"></i> </a> </li>
+                                <i class="fa fa-facebook"></i> 
+                             </a> 
+                        </li>
+                        <li> <a href="https://www.instagram.com/rwAdilabad" target="_blank" alt="R&W Adilabad Instagram"> 
+                                <i class="fa fa-instagram"></i> 
+                            </a> 
+                        </li>
+                        <li> <a href="https://twitter.com/rwAdilabad" target="_blank" alt="R&W Adilabad Twitter"> 
+                                <i class="fa fa-twitter"></i> 
+                            </a> 
+                        </li>
+                        <li> <a href="https://www.youtube.com/user/rwAdilabad" target="_blank" alt="R&W Adilabad Youtube"> 
+                                <i class="fa fa-youtube"></i> 
+                            </a> 
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/rwAdilabad" target="_blank" aria-label="R&W Adilabad LinkedIn">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>          
                     </ul>
                 </div>
     
