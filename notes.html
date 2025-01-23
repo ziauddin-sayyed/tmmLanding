@@ -357,7 +357,13 @@
     <script>
         function openPdf(evt, fileUrl) {
             // Open a new tab with the PDF URL as a query parameter
-            var newPageUrl = 'viewpdf.html?file=' + encodeURIComponent(fileUrl);
+            // var newPageUrl = 'viewpdf.html?file=' + encodeURIComponent(fileUrl);
+            var isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+            var newPageUrl = fileUrl;
+            if(isMobile){
+                newPageUrl = 'https://docs.google.com/viewerng/viewer?url=' + encodeURIComponent(fileUrl);
+            }
+            
             window.open(newPageUrl, "_blank"); // Open the new page in a new tab
 
             // Prevent the default link behavior (no download)
