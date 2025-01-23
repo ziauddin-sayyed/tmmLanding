@@ -356,10 +356,11 @@
     </div>
     <script>
         function openPdf(evt, fileUrl) {
-            // var isMobile = /Mobi|Android/i.test(navigator.userAgent); // Check if mobile device
-            // On both mobile and desktop, we simply open the PDF in a new tab
-            window.open(fileUrl, "_blank"); // Opens the PDF in a new tab
-            // Prevent the default behavior (no download)
+            // Open a new tab with the PDF URL as a query parameter
+            var newPageUrl = 'viewpdf.html?file=' + encodeURIComponent(fileUrl);
+            window.open(newPageUrl, "_blank"); // Open the new page in a new tab
+
+            // Prevent the default link behavior (no download)
             evt.preventDefault();
         }
     </script>

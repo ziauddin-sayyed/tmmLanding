@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View PDF in iframe</title>
+    <style>
+        /* Style for the iframe */
+        .pdf-container {
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>View PDF File:</h1>
+    
+    <!-- Container to hold the iframe -->
+    <iframe id="pdf-iframe" class="pdf-container"></iframe>
+
+    <script>
+        // Get the URL parameter 'file' from the query string
+        var urlParams = new URLSearchParams(window.location.search);
+        var fileUrl = urlParams.get('file');  // Extract the 'file' parameter
+
+        if (fileUrl) {
+            // Set the iframe source to the PDF file URL
+            document.getElementById('pdf-iframe').src = fileUrl;
+        } else {
+            // Handle case where no file URL is passed
+            document.body.innerHTML = "<h1>No PDF URL provided</h1>";
+        }
+    </script>
+
+</body>
+</html>
