@@ -17,6 +17,7 @@
 
     <link rel="canonical" href="https://themanagemate.com">
     <link rel="icon" href="images/logo-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -30,12 +31,15 @@
             "https://www.linkedin.com/company/yourcompany"
           ],
           "contactPoint": {
-            "@type": "Sayyed",
-            "telephone": "+91-7208649034",
+            "@context": "https://schema.org",
+            "@type": "contactPoint",
             "contactType": "Customer Service",
+            "email": "info@themanagemate.com",
+            "telephone": "+91-7208649034",
             "areaServed": "IN",
             "availableLanguage": "English"
           }
+          
         }
     </script>
 
@@ -70,77 +74,12 @@
                 <nav class="collapse navbar-collapse" role="navigation">
                     <div class="nav navbar-nav js-desktop-menu">
                         <ul id="menu-main-menu" class="clearfix">
-                            <!-- <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children">
-                                <a href="#!">Buy</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="listings?type=Buy">Property For Sale</a> </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="auction">Current Auction Properties</a> </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                                <a href="#!">Rent</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="?type=Rent">PROPERTY FOR RENT</a> </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a href="">PG
-                                            / HOSTEL</a> </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                                <a href="#!">Sell</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="buying-at-auction">POST YOUR PROPERTY</a> </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="listings?type=Sold">SELL AD PACKAGES</a> </li>
-                                </ul>
-                            </li> -->
-                            <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom"> <a
-                                    href="aboutus.html">About</a> </li> -->
                             <li class="menu-item menu-item-type-custom menu-item-object-custom"> <a
                                     href="#services">Services</a> </li>
-                            <!-- <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                    href="#contact">Contact</a> </li> -->
-                            <!-- <li class="hidden-xs hidden-sm header-search"> <a href="#!" data-toggle="modal"
-                                    data-target="#search-modal" class="pull-right"> <i class="fa fa-search"></i> </a>
-                            </li> -->
                         </ul>
                     </div>
                     <div class="nav navbar-nav js-mobile-menu" style="display:none">
                         <ul id="menu-main-menu" class="clearfix">
-                            <!-- <li
-                                class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children">
-                                <a href="#!">Buy</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="listings?type=Buy">Property For Sale</a> </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="auction">Current Auction Properties</a> </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                                <a href="#!">Rent</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="?type=Rent">PROPERTY FOR RENT</a> </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a href="">PG
-                                            / HOSTEL</a> </li>
-                                </ul>
-                            </li>
-                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                                <a href="#!">Sell</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="buying-at-auction">POST YOUR PROPERTY</a> </li>
-                                    <li class="menu-item menu-item-type-post_type menu-item-object-page"> <a
-                                            href="listings?type=Sold">SELL AD PACKAGES</a> </li>
-                                </ul>
-                            </li> -->
-                            <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom"> <a
-                                    href="aboutus.html">About</a> </li> -->
                             <li class="menu-item menu-item-type-custom menu-item-object-custom"> <a
                                 href="#services">Services</a> </li>
     
@@ -177,87 +116,6 @@
 <body class="fixed-header">
 
 
-    <div id="search-modal" class="modal fade search-modal js-search-modal" role="dialog"
-        aria-labelledby="search-modal-label" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header"> <button type="button" class="close" data-dismiss="modal"><span
-                            aria-hidden="true">×</span><span class="sr-only">Close</span></button> </div>
-                <div class="modal-body">
-                    <h3 id="search-modal-label" class="section-title text-center"><span>Property Search</span></h3> <br>
-                    <form class="property-search-form" action="/listings" method="get" id="search_form"> <input
-                            type="hidden" name="order" value=""> <input type="hidden" name="direction" value=""> <input
-                            type="hidden" name="view_type" value="grid-view">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-4 col-md-3 form-group select"> <select
-                                    class="form-control chosen-select" name="type" id="select_type">
-                                    <option value="Buy">Buy</option>
-                                    <option value="Rent">Rent</option>
-                                </select> </div>
-                            <div class="col-xs-12 col-sm-4 col-md-6 form-group"> <input id="search_what_footer"
-                                    type="text" value="" placeholder="Search Properties"
-                                    class="form-control search_what" name="address"> </div>
-                            <div class="col-sm-offset-3 col-md-offset-3 col-xs-12 col-sm-4 col-md-3 form-group"> <input
-                                    type="submit" value="Search" class="btn btn-primary btn-block form-control"> </div>
-                        </div>
-                        <p> <a href="#" class="toggle-property-search-more"> <span class="more">Show more search
-                                    options</span> <span class="less hide">Hide additional search options</span> </a>
-                        </p>
-                        <div class="property-search-more">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-md-4 form-group select"> <select
-                                        class="form-control chosen-select" name="property_type">
-                                        <option value="">Property Type</option>
-                                        <option value="Residential">Residential</option>
-                                        <option value="Commercial">Commercial</option>
-                                        <option value="Rural">Rural</option>
-                                        <option value="Business">Business</option>
-                                    </select> </div>
-                                <div class="col-xs-12 col-sm-6 col-md-4 form-group select"> <select
-                                        class="form-control chosen-select" name="price_from">
-                                        <option value="">Price Min</option>
-                                        <option class="js-search-sale-price" value="50000">$50,000</option>
-                                    </select> </div>
-                                <div class="col-xs-12 col-sm-6 col-md-4 form-group select"> <select
-                                        class="form-control chosen-select" name="price_to">
-                                        <option value="">Price Max</option>
-                                        <option class="js-search-rent-price hide" value="3000">$3,000</option>
-                                    </select> </div>
-                                <div class="col-xs-12 col-sm-6 col-md-4 form-group select"> <select
-                                        class="form-control chosen-select" name="beds">
-                                        <option value="">Bedrooms</option>
-                                        <option value="1">1 Room</option>
-                                        <option value="2">2 Rooms</option>
-                                        <option value="3">3 Rooms</option>
-                                        <option value="4">4 Rooms</option>
-                                        <option value="5">5+ Rooms</option>
-                                    </select> </div>
-                                <!-- <div class="col-xs-12 col-sm-6 col-md-4 form-group select"> <select
-                                        class="form-control chosen-select" name="baths">
-                                        <option value="">Bathrooms</option>
-                                        <option value="1">1 Room</option>
-                                        <option value="2">2 Rooms</option>
-                                        <option value="3">3 Rooms</option>
-                                        <option value="4">4 Rooms</option>
-                                        <option value="5">5+ Rooms</option>
-                                    </select> </div> -->
-                                <!-- <div class="col-xs-12 col-sm-6 col-md-4 form-group select"> <select
-                                        class="form-control chosen-select" name="cars">
-                                        <option value="">Parking</option>
-                                        <option value="1">1 Space</option>
-                                        <option value="2">2 Spaces</option>
-                                        <option value="3">3 Spaces</option>
-                                        <option value="4">4 Spaces</option>
-                                        <option value="5">5+ Spaces</option>
-                                    </select> </div> -->
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <div id="template-slideshow" class="slideshow-type-property">
         <div class="slides">
@@ -266,33 +124,10 @@
                 <div class="home-img-slide"> <span class="user image sample-1-slider-image" data-id="1846"
                         data-name="sample-1-slider-image "> <img src="images/slide1.jpeg" alt="side1">  </span>
                     <div class="home-img-slide-content">
-                        <!-- <div class="container">
-                            <div class="banner-blurb is-in-home-slider">
-                                <div class="banner-blurb-content"> <span>
-                                        <h1>Refurbished Laptops & Computers <small>Affordable & Reliable</small></h1> <a
-                                            href="/listings?type=Buy"> Click here to view our latest properties </a>
-                                    </span> </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>
 
-            <!-- <div class="slide slide-1">
-                <div class="home-img-slide"> <span class="user image sample-1-slider-image" data-id="1846"
-                        data-name="sample-1-slider-image"> <img src="images/slide1.jpeg" alt="side1"> </span>
-                    <div class="home-img-slide-content">
-                        <div class="container">
-                            <div class="banner-blurb is-in-home-slider">
-                                <div class="banner-blurb-content"> <span>
-                                        <h1>Refurbished Laptops & Computers <small>Affordable & Reliable</small></h1> <a
-                                            href="/listings?type=Buy"> Click here to view our latest properties </a>
-                                    </span> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-            </div>-->
             <div class="slide slide-1">
                 <div class="owl-lazy" data-src="images/slide2.jpeg"></div>
                 <div class="wrapper-out">
@@ -343,525 +178,289 @@
                     </div>
                 </div>
             </div>
-            <div class="slide slide-1">
-                <div class="owl-lazy" data-src="images/slide4.jpeg"></div>
-                <div class="wrapper-out">
-                    <div class="wrapper">
-                        <div class="inner">
-                            <div class="container">
-                                <h3 class="title"> <a href="/listing-detail?listing_id=85020"> Could This Possibly Be
-                                        The Best View in Adilabad? </a> </h3>
-                                <div class="clearfix"></div>
-                                <div class="description">
-                                    <p>Open Homes, Private Inspections & Video Walk-Throughs All of our properties at
-                                        Richardson & Wrench Adilabad are available to inspect. If you are...</p>
-                                    <div class="arrow-right"></div>
-                                    <div class="property-data">
-                                        <div class="property-price">Price Guide $2,500,000</div>
-                                        <div class="property-details"> <i class="fa fa-bed"></i>3 Beds <i
-                                                class="fa fa-tint"></i>2 Baths <i class="fa fa-car"></i>1 Cars </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slide slide-1">
-                <div class="owl-lazy" data-src="images/slide5.jpeg"></div>
-                <div class="wrapper-out">
-                    <div class="wrapper">
-                        <div class="inner">
-                            <div class="container">
-                                <h3 class="title"> <a href="/listing-detail?listing_id=82929"> Single Story Elegant Home
-                                        - The Ultimate Golfing Lifestyle </a> </h3>
-                                <div class="clearfix"></div>
-                                <div class="description">
-                                    <p>Open Homes, Private Inspections & Video Walk-Throughs All of our properties at
-                                        Richardson & Wrench Adilabad are available to inspect. If you are...</p>
-                                    <div class="arrow-right"></div>
-                                    <div class="property-data">
-                                        <div class="property-price">Contact Agent</div>
-                                        <div class="property-details"> <i class="fa fa-bed"></i>3 Beds <i
-                                                class="fa fa-tint"></i>4 Baths <i class="fa fa-car"></i>2 Cars </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
 
     <div class="container" id="services">
-        <!-- <div class="row">
-            <p style="text-align: justify;"> <b>AdilabadProperty.com</b>  is a dedicated online portal for people who want to buy, rent and sell properties in and around Adilabad District. </p>
-            <p style="text-align: justify;">Our core team have more than fifteen years of local real estate experience and have been at service of clients for all kind of property needs, we use latest technologies, market research and business strategies to exceed your expectations. </p>
-
-        </div> -->
-
-        <div class="text-center" ><h1>Our Services</h1></div>
-
-        <div class="row equal-height" >
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="background-color: paleturquoise;" >
-                <br>
-                <h2 class="text-center" >Web & App Development</h2>
-                <h5> &#x2022; Ecommerce</h5>
-                <h5> &#x2022; CRM & LMS Applications</h5>
-                <h5> &#x2022; Android & iOS Apps</h5>
-                <h5> &#x2022; Platform Integration</h5>
-                <h5> &#x2022; Responsive Websites</h5>
-                <h5> &#x2022; Facebook & Ads Marketing</h5>
-                <h5> &#x2022; GDPR, Websites SEO & Standards </h5>
-                <h5> &#x2022; All Custom requirements </h5>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="background-color: #fceea0;" >
-                <br>
-                <h2 class="text-center" >Cloud & DevOps</h2>
-                <h5> &#x2022; AWS, Google Cloud and Azure</h5>
-                <h5> &#x2022; Google Workspace, MS365 and Zoho</h5>
-                <h5> &#x2022; Godaddy, Cloudflare, DNS Services</h5>
-                <h5> &#x2022; Webmail, Bulk Email, Email Migration</h5>
-                <h5> &#x2022; Dedicated Server Rentals</h5>
-                <h5> &#x2022; CDN with S3 & GS and Cloud storage</h5>
-                <h5> &#x2022; Complete support over services</h5>
-                <h5> &#x2022; All Custom requirements </h5>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="background-color: lightgreen;" >
-                <br>
-                <h2 class="text-center" >Hardware & Networking</h2>
-                <h5> &#x2022; New/Refurbished Laptops & PCs</h5>
-                <h5> &#x2022; Routers, Security firewalls</h5>
-                <h5> &#x2022; Dual Switchable Internet with Wifi</h5>
-                <h5> &#x2022; Biometric Systems with web app</h5>
-                <h5> &#x2022; Printers & Other Accessories</h5>
-                <h5> &#x2022; Annual Maintanance services</h5>
-                <h5> &#x2022; Client site visit for troubleshoot</h5>
-                <h5> &#x2022; All Custom requirements </h5>
-            </div>
-            </div>
-    </div>
-
-
-
-    <!-- <div class="container">
-
-        <div class="row">
-
-            <div class="col-md-1 vertical-desk-add">
-            </div>
-
-            <div class="col-md-10">
-                <form class="property-search-form" action="/listings" method="get" id="search_form"> <input type="hidden"
-                        name="order" value=""> <input type="hidden" name="direction" value=""> <input type="hidden"
-                        name="view_type" value="grid-view">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-4 col-md-3 form-group select"> <select class="form-control chosen-select"
-                                name="type" id="select_type">
-                                <option value="Buy">Buy</option>
-                                <option value="Rent">Rent</option>
-                            </select> </div>
-                        <div class="col-xs-12 col-sm-4 col-md-6 form-group"> <input id="search_what" type="text" value=""
-                                placeholder="Search Address, Suburb" class="form-control search_what" name="address"> </div>
-                        <div class="col-xs-12 col-sm-4 col-md-3 form-group"> <input type="submit" value="Search"
-                                class="btn btn-primary btn-block form-control"> </div>
-                    </div>
-                    <p> <a href="#" class="toggle-property-search-more"> <span class="more hide">Show more search options</span>
-                            <span class="less">Hide additional search options </span> </a> </p>
-                    <div class="property-search-more show">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-4 form-group select"> <select
-                                    class="form-control chosen-select" name="property_category">
-                                    <option value="">Property Type</option>
-                                    <option value="Apartment">Apartment</option>
-                                    <option value="House">House</option>
-                                    <option value="Residential">Land/Development</option>
-                                </select> </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4 form-group select"> <select
-                                    class="form-control chosen-select" name="price_from">
-                                    <option value="">Price Min</option>
-                                    <option class="js-search-sale-price" value="50000" >   &#8377; 50,000</option>
-                                    <option class="js-search-rent-price hide" value="3000" >   &#8377; 3,000</option>
-                                </select> </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4 form-group select"> <select
-                                    class="form-control chosen-select" name="price_to">
-                                    <option value="">Price Max</option>
-                                    <option class="js-search-sale-price" value="50000" >   &#8377; 50,000</option>
-                                    <option class="js-search-rent-price hide" value="3000" >   &#8377; 3,000</option>
-                                </select> </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4 form-group select"> <select
-                                    class="form-control chosen-select" name="beds">
-                                    <option value="">Bedrooms</option>
-                                    <option value="1">1 Room</option>
-                                    <option value="2">2 Rooms</option>
-                                    <option value="3">3 Rooms</option>
-                                    <option value="4">4 Rooms</option>
-                                    <option value="5">5+ Rooms</option>
-                                </select> </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-1 vertical-desk-add">
-                
-            </div>
+        <div class="text-center mb-4">
+            <h1 style="font-weight: bold;">Our Services</h1>
         </div>
-
-        <div id="search_top"></div>
-        <div class="show-compare" id="property-items" data-view="grid-view"> </div>
-    </div> -->
-
-
-
-
-<!-- <div class="container">
-    <h2 class="js-latest-listings section-title style1 text-center"><span>Latest Listings</span></h2>
-
-    <div class="owl-carousel owl-theme">
-
-        <div class="col-sm-12">
-            <div class="property-item primary-tooltips featured title-above-image">
-            <div class="property-title">
-            <h3 class="title">Adilabad HEADS</h3>
-            <h4 class="address">19/2 Serenity Close</h4>
-            </div>
-            <figure class="property-thumbnail">
-            <img class="attachment-property-thumb size-property-thumb wp-post-image" src="images/slide4.jpeg" alt="19/2 Serenity Close, Adilabad HEADS">
-            <div class="property-tag tag-right">
-            For Sale
-            </div>
-            <figcaption>
-            <div class="property-excerpt">
-            <div class="subtitle">
-            <span class="type">Residential</span> <span>·</span>
-            <span class="status">
-            For Sale
-            </span>
-            </div>
-            <p>Beautifully renovated mid floor Ocean view apartment superbly situated amongst the natural tree lined landscape &amp; immaculately positioned on a...</p>
-            </div>
-            </figcaption>
-            </figure>
-            <div class="property-content">
-            <div class="property-meta clearfix">
-            <div class="property-meta-title">OCEAN VIEW Adilabad APARTMENT</div>
-            <div>
-            <div class="meta-title"><i class="fa fa-bed"></i></div>
-            <div class="meta-data" data-toggle="tooltip" title="" data-original-title="Bedrooms">
-            2 Bedrooms
-            </div>
-            </div>
-            <div>
-            <div class="meta-title"><i class="fa fa-tint"></i></div>
-            <div class="meta-data" data-toggle="tooltip" title="" data-original-title="Bathrooms">
-            2 Bathrooms
-            </div>
-            </div>
-            <div>
-            <div class="meta-title"><i class="fa fa-car"></i></div>
-            <div class="meta-data" data-toggle="tooltip" title="" data-original-title="Parking">
-            1 Parking
-            </div>
-            </div>
-            </div>
-            <div class="property-price">
-            <div class="share-unit" data-page-url="listing-detail?listing_id=100529" data-page-title="Ocean View Adilabad Apartment" data-page-description="Beautifully renovated mid floor Ocean view apartment superbly situated amongst the natural tree lined landscape &amp; immaculately positioned on a forested ridgeline that rests above the waterways of Adilabad Sound. 
-            
-            Capturing glistening views over Adilabad Sound, Laguna Bay &amp; Adilabad North Shore this is a..." data-image="https://assets.boxdice.com.au/richardson_wrench_Adilabad/listings/4004/ee1f6c59.jpg" style="display: none;">
-            <a class="social-facebook js-share" data-share="facebook" href="#">
-            <i class="fa fa-facebook"></i>
-            </a>
-            <a class="social-twitter js-share" data-share="twitter" href="#">
-            <i class="fa fa-twitter"></i>
-            </a>
-            <a class="social-google js-share" data-share="google" href="#">
-            <i class="fa fa-google-plus"></i>
-            </a>
-            <a class="social-pinterest js-share" data-share="pinterest" href="#">
-            <i class="fa fa-pinterest-p"></i>
-            </a>
-            <a class="social-linkedin js-share" data-share="linkedin" href="#">
-            <i class="fa fa-linkedin"></i>
-            </a>
-            <a class="social-envelope js-share" data-share="email" href="#">
-            <i class="fa fa-envelope"></i>
-            </a>
-            </div>
-            <i class="fa fa-share-alt share-property"></i>
-            <div class="price-tag">Price Guide $835,000</div>
-            <div class="clearfix"></div>
-            </div>
-            </div>
-            </div>
-        </div>
-
-
-
-
-        <div class="col-sm-12">
-            <div class="property-item primary-tooltips featured title-above-image">
-            <div class="property-title">
-            <h3 class="title">Adilabad HEADS</h3>
-            <h4 class="address">19/2 Serenity Close</h4>
-            </div>
-            <figure class="property-thumbnail">
-            <img class="attachment-property-thumb size-property-thumb wp-post-image" src="images/slide4.jpeg" alt="19/2 Serenity Close, Adilabad HEADS">
-            <div class="property-tag tag-right">
-            For Sale
-            </div>
-            <figcaption>
-            <div class="property-excerpt">
-            <div class="subtitle">
-            <span class="type">Residential</span> <span>·</span>
-            <span class="status">
-            For Sale
-            </span>
-            </div>
-            <p>Beautifully renovated mid floor Ocean view apartment superbly situated amongst the natural tree lined landscape &amp; immaculately positioned on a...</p>
-            </div>
-            </figcaption>
-            </figure>
-            <div class="property-content">
-            <div class="property-meta clearfix">
-            <div class="property-meta-title">OCEAN VIEW Adilabad APARTMENT</div>
-            <div>
-            <div class="meta-title"><i class="fa fa-bed"></i></div>
-            <div class="meta-data" data-toggle="tooltip" title="" data-original-title="Bedrooms">
-            2 Bedrooms
-            </div>
-            </div>
-            <div>
-            <div class="meta-title"><i class="fa fa-tint"></i></div>
-            <div class="meta-data" data-toggle="tooltip" title="" data-original-title="Bathrooms">
-            2 Bathrooms
-            </div>
-            </div>
-            <div>
-            <div class="meta-title"><i class="fa fa-car"></i></div>
-            <div class="meta-data" data-toggle="tooltip" title="" data-original-title="Parking">
-            1 Parking
-            </div>
-            </div>
-            </div>
-            <div class="property-price">
-            <div class="share-unit" data-page-url="listing-detail?listing_id=100529" data-page-title="Ocean View Adilabad Apartment" data-page-description="Beautifully renovated mid floor Ocean view apartment superbly situated amongst the natural tree lined landscape &amp; immaculately positioned on a forested ridgeline that rests above the waterways of Adilabad Sound. 
-            
-            Capturing glistening views over Adilabad Sound, Laguna Bay &amp; Adilabad North Shore this is a..." data-image="https://assets.boxdice.com.au/richardson_wrench_Adilabad/listings/4004/ee1f6c59.jpg" style="display: none;">
-            <a class="social-facebook js-share" data-share="facebook" href="#">
-            <i class="fa fa-facebook"></i>
-            </a>
-            <a class="social-twitter js-share" data-share="twitter" href="#">
-            <i class="fa fa-twitter"></i>
-            </a>
-            <a class="social-google js-share" data-share="google" href="#">
-            <i class="fa fa-google-plus"></i>
-            </a>
-            <a class="social-pinterest js-share" data-share="pinterest" href="#">
-            <i class="fa fa-pinterest-p"></i>
-            </a>
-            <a class="social-linkedin js-share" data-share="linkedin" href="#">
-            <i class="fa fa-linkedin"></i>
-            </a>
-            <a class="social-envelope js-share" data-share="email" href="#">
-            <i class="fa fa-envelope"></i>
-            </a>
-            </div>
-            <i class="fa fa-share-alt share-property"></i>
-            <div class="price-tag">Price Guide $835,000</div>
-            <div class="clearfix"></div>
-            </div>
-            </div>
-            </div>
-        </div>
-
-
-
-    </div>
-
-</div> -->
-
-
     
-    <!-- <div class="footer-about">
-        <div class="container">
-            <h2 class="section-title is-gray text-center"><span>AdilabadProperty</span></h2>
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2 text-dark">
-                    <div class="user html about-section-body" data-id="336" data-name="about-section-body">
-                        <div class="page" title="Page 1">
-                            <div class="section">
-                                <div class="layoutArea">
-                                    <div class="column">
-                                        <p style="text-align:center"><span>Purchase a home or invest in property in
-                                                Adilabad, QLD</span> </p>
-                                        <div class="page" title="Page 1">
-                                            <div class="section">
-                                                <div class="layoutArea">
-                                                    <div class="column">
-                                                        <p style="text-align:center"><span>No one knows the real estate
-                                                                market in Adilabad better than we do. For years,
-                                                                we&rsquo;ve been helping clients buy and sell the best
-                                                                houses and apartments in and around Adilabad - be it to
-                                                                those looking for a new family home or for a property
-                                                                investment opportunity.&nbsp;</span></p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="page" title="Page 1">
-                                            <div class="section">
-                                                <div class="layoutArea">
-                                                    <div class="column">
-                                                        <p style="text-align:center"><span>Our capable real estate
-                                                                agents in Adilabad will guide you to the best properties
-                                                                and units for sale that will be well-suited to your
-                                                                budget. You can trust you&rsquo;ll receive nothing but
-                                                                the best with AdilabadProperty.&nbsp;</span> </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p style="text-align:center"><span><br></span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+            <!-- Web & App Development Card -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card shadow-sm border-light rounded-3">
+                    <div class="card-body pb-4" style="background-color: #e2f3f5; padding: 20px; margin-bottom: 2rem;">
+                        <h3 class="card-title text-center" style=" color: #007bff; font-weight: bold;">Web & App Development</h3>
+                        <ul class="list-unstyled text-dark">
+                            <h5>&#x2022; Ecommerce</h5>
+                            <h5>&#x2022; CRM & LMS Applications</h5>
+                            <h5>&#x2022; Android & iOS Apps</h5>
+                            <h5>&#x2022; Platform Integration</h5>
+                            <h5>&#x2022; Responsive Websites</h5>
+                            <h5>&#x2022; Facebook & Ads Marketing</h5>
+                            <h5>&#x2022; GDPR, Websites SEO & Standards</h5>
+                            <h5>&#x2022; All Custom requirements</h5>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Cloud & DevOps Card -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card shadow-sm border-light ">
+                    <div class="card-body pb-4" style="background-color: #fff9d9; padding: 20px; margin-bottom: 2rem;">
+                        <h3 class="card-title text-center" style=" color: #f39c12; font-weight: bold;">Cloud & DevOps</h3>
+                        <ul class="list-unstyled text-dark">
+                            <h5>&#x2022; AWS, Google Cloud and Azure</h5>
+                            <h5>&#x2022; Google Workspace, MS365 and Zoho</h5>
+                            <h5>&#x2022; Godaddy, Cloudflare, DNS Services</h5>
+                            <h5>&#x2022; Webmail, Bulk Email, Email Migration</h5>
+                            <h5>&#x2022; Dedicated Server Rentals</h5>
+                            <h5>&#x2022; CDN with S3 & GS and Cloud storage</h5>
+                            <h5>&#x2022; Complete support over services</h5>
+                            <h5>&#x2022; All Custom requirements</h5>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Hardware & Networking Card -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card shadow-sm border-light rounded-3">
+                    <div class="card-body pb-4" style="background-color: #d4f0d0; padding: 20px; margin-bottom: 2rem;">
+                        <h3 class="card-title text-center" style=" color: #28a745; font-weight: bold;">Hardware & Networking</h3>
+                        <ul class="list-unstyled text-dark">
+                            <h5>&#x2022; New/Refurbished Laptops & PCs</h5>
+                            <h5>&#x2022; Routers, Security firewalls</h5>
+                            <h5>&#x2022; Dual Switchable Internet with Wifi</h5>
+                            <h5>&#x2022; Biometric Systems with web app</h5>
+                            <h5>&#x2022; Printers & Other Accessories</h5>
+                            <h5>&#x2022; Annual Maintenance services</h5>
+                            <h5>&#x2022; Client site visit for troubleshoot</h5>
+                            <h5>&#x2022; All Custom requirements</h5>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div> -->
-
-
+    </div>
+    
+   
     <div class="container">
         <!-- Web & App Development Section -->
-        <div class="text-center" ><h1>Details</h1></div>
+        <div class="text-center p-5"><h1 style=" font-weight: bold; margin-top: 3rem;">Details</h1></div>
 
             <!-- Web & App Development Section -->
-            <h2>Web & App Development</h2>
-            <div class="row equal-height">
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>Ecommerce</h4>
-                <p class="service-paragraph">Our eCommerce solutions offer seamless, user-friendly platforms tailored to your business needs. We build secure, scalable online stores with easy integration of payment gateways, inventory management, and order processing systems. With custom-built features, we ensure that your eCommerce platform is equipped to handle high traffic volumes and provide a superior user experience. From B2B to B2C, we create solutions that help you expand your online presence and drive sales.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>CRM & LMS Applications</h4>
-                <p class="service-paragraph">Our CRM (Customer Relationship Management) and LMS (Learning Management System) applications are designed to help businesses streamline operations and improve customer engagement. We build scalable, customized CRM systems that help you manage leads, customer interactions, and sales processes efficiently. For education institutions or businesses looking to train employees, our LMS solutions offer interactive features, analytics, and robust performance tracking to enhance learning outcomes.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>Android & iOS Apps</h4>
-                <p class="service-paragraph">We specialize in developing high-performance, intuitive mobile apps for both Android and iOS platforms. Our expert developers use the latest technologies to ensure your app performs well and provides an excellent user experience across all devices. Whether it's a consumer-facing app, enterprise solution, or something completely custom, we offer end-to-end services from ideation to deployment, including ongoing support and updates to ensure continued success.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>Platform Integration</h4>
-                <p class="service-paragraph">We provide seamless platform integration services to ensure all your business tools work together effortlessly. From linking CRM systems to payment gateways, ERP systems, or third-party APIs, we ensure that your software solutions communicate efficiently. Our integration expertise helps improve workflow automation, reduce operational costs, and enhance data sharing across platforms, creating a more cohesive and streamlined environment for your business operations.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>Responsive Websites</h4>
-                <p class="service-paragraph">Our responsive website development ensures your site looks great and functions smoothly on any device, from desktop computers to mobile phones. Using modern web development technologies like HTML5, CSS3, and JavaScript frameworks, we create dynamic, fast-loading websites that adjust to various screen sizes and resolutions, offering your visitors an optimal browsing experience, no matter how they access your site. A responsive website is key for maximizing engagement and reducing bounce rates.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>Facebook & Ads Marketing</h4>
-                <p class="service-paragraph">Our Facebook & Ads Marketing services help businesses boost their online visibility and increase ROI. We create targeted campaigns on Facebook, Instagram, Google Ads, and other platforms, optimizing for both clicks and conversions. By leveraging detailed analytics and A/B testing, we refine ad strategies to ensure that your marketing budget is spent effectively. We also monitor campaign performance in real time, adjusting strategies to maintain a competitive edge and drive measurable business results.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>GDPR, Websites SEO & Standards</h4>
-                <p class="service-paragraph">We help you comply with GDPR standards while improving your website’s search engine ranking. Our SEO experts optimize your site’s content, structure, and technical elements to improve visibility and drive organic traffic. We also ensure that your website adheres to current data protection laws, with features like secure data storage, user consent management, and cookie notifications. By improving your site’s technical health and aligning with global standards, we enhance both your brand’s credibility and search engine performance.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>All Custom Requirements</h4>
-                <p class="service-paragraph">We specialize in building custom web and app solutions tailored to your specific business needs. Whether you need a unique feature, integration, or completely bespoke functionality, our team is equipped to bring your vision to life. From designing custom user interfaces to developing complex back-end systems, we ensure that every aspect of your solution is built with scalability, performance, and security in mind, allowing your business to stand out in a competitive market.</p>
-              </div>
+            <h2 style="font-weight: bold; font-size: 1.6em; padding-top: 1rem;">Web & App Development</h2>
+            <div class="accordion-container">
+                <section class="accordion">
+                  <input type="checkbox" name="collapse" id="handle1" >
+                  <h2 class="handle">
+                    <label for="handle1">Ecommerce</label>
+                  </h2>
+                  <div class="content">
+                    <p>Our eCommerce solutions offer seamless, user-friendly platforms tailored to your business needs. We build secure, scalable online stores with easy integration of payment gateways, inventory management, and order processing systems. With custom-built features, we ensure that your eCommerce platform is equipped to handle high traffic volumes and provide a superior user experience. From B2B to B2C, we create solutions that help you expand your online presence and drive sales.</p>
+                  </div>
+                </section>
+                <section class="accordion">
+                  <input type="checkbox" name="collapse" id="handle2">
+                  <h2 class="handle">
+                    <label for="handle2">CRM & LMS Applications</label>
+                  </h2>
+                  <div class="content">
+                    <p>Our CRM (Customer Relationship Management) and LMS (Learning Management System) applications are designed to help businesses streamline operations and improve customer engagement. We build scalable, customized CRM systems that help you manage leads, customer interactions, and sales processes efficiently. For education institutions or businesses looking to train employees, our LMS solutions offer interactive features, analytics, and robust performance tracking to enhance learning outcomes.</p>
+                  </div>
+                </section>
+                <section class="accordion">
+                  <input type="checkbox" name="collapse" id="handle3">
+                  <h2 class="handle">
+                    <label for="handle3">Android & iOS Apps</label>
+                  </h2>
+                  <div class="content">
+                    <p>We specialize in developing high-performance, intuitive mobile apps for both Android and iOS platforms. Our expert developers use the latest technologies to ensure your app performs well and provides an excellent user experience across all devices. Whether it's a consumer-facing app, enterprise solution, or something completely custom, we offer end-to-end services from ideation to deployment, including ongoing support and updates to ensure continued success.</p>
+                  </div>
+                </section>
+                <section class="accordion">
+                    <input type="checkbox" name="collapse" id="handle4">
+                    <h2 class="handle">
+                      <label for="handle4">Platform Integration</label>
+                    </h2>
+                    <div class="content">
+                      <p>We provide seamless platform integration services to ensure all your business tools work together effortlessly. From linking CRM systems to payment gateways, ERP systems, or third-party APIs, we ensure that your software solutions communicate efficiently. Our integration expertise helps improve workflow automation, reduce operational costs, and enhance data sharing across platforms, creating a more cohesive and streamlined environment for your business operations.</p>
+                    </div>
+                </section>
             </div>
-          
+
             <!-- Cloud & DevOps Section -->
-            <h2>Cloud & DevOps</h2>
-            <div class="row equal-height">
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>AWS, Google Cloud, and Azure</h4>
-                <p class="service-paragraph">We offer comprehensive cloud services, including deployment and management on AWS, Google Cloud, and Microsoft Azure. Our experts help you migrate, optimize, and scale your infrastructure while ensuring high availability and security. We leverage the unique capabilities of each platform to build cloud-native applications, ensuring that your resources are flexible, cost-effective, and secure. Whether you need compute, storage, or advanced analytics, our team provides tailored solutions for your specific cloud needs.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>Google Workspace, MS365, and Zoho</h4>
-                <p class="service-paragraph">We assist businesses in transitioning to and optimizing cloud-based productivity tools like Google Workspace, Microsoft 365, and Zoho. Our services include full deployment, user training, and ongoing support. From setting up email, calendars, and collaboration tools to integrating third-party apps and creating custom workflows, we ensure that your team has all the tools they need to work more efficiently, securely, and collaboratively, whether in the office or remotely.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>GoDaddy, Cloudflare, DNS Services</h4>
-                <p class="service-paragraph">Our team provides reliable DNS services, domain management, and website performance optimization with providers like GoDaddy and Cloudflare. We manage your domain registrations, DNS configurations, and ensure your website's availability with Cloudflare’s CDN and DDoS protection. Additionally, we ensure faster website load times, enhanced security, and protection from cyber threats. We also offer full support for setting up and configuring email services to ensure smooth business communication.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>Webmail, Bulk Email, Email Migration</h4>
-                <p class="service-paragraph">Our email services cover everything from setting up secure webmail solutions to bulk email campaigns and email migration. We help businesses move from outdated systems to modern, efficient email solutions, ensuring minimal downtime and smooth transitions. We also assist with bulk email campaigns, optimizing deliverability, and segmentation to increase engagement and conversions. Our team ensures that your email infrastructure is secure, scalable, and effective for both internal and marketing communications.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>Dedicated Server Rentals</h4>
-                <p class="service-paragraph">We provide dedicated server rental solutions tailored to your business’s needs. Whether you're running a resource-intensive application, hosting a website with high traffic, or need an isolated environment for secure data storage, our team configures and manages servers to meet your requirements. With 24/7 monitoring and support, you can rely on us to ensure your server runs smoothly, securely, and with optimal performance.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>CDN with S3 & GS and Cloud Storage</h4>
-                <p class="service-paragraph">Our CDN (Content Delivery Network) services, integrated with S3 (Amazon Web Services) and GS (Google Cloud Storage), ensure faster content delivery and improved website performance globally. By caching content at various edge locations, we reduce latency and speed up load times for users, regardless of their geographical location. We also offer scalable cloud storage solutions for businesses to securely store and retrieve data anytime, with guaranteed uptime and fast access.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>Complete Support Over Services</h4>
-                <p class="service-paragraph">We provide complete support for all cloud, DevOps, and IT infrastructure services. Our team offers proactive monitoring, troubleshooting, and management of your cloud resources, ensuring maximum uptime, performance, and cost-efficiency. Whether it’s optimizing your cloud architecture, migrating systems, or implementing disaster recovery plans, we’re here to provide expert assistance and ensure your cloud solutions are always running at their best.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>All Custom Requirements</h4>
-                <p class="service-paragraph">From specialized configurations to custom cloud solutions, we provide services tailored to meet your unique business requirements. Our team works closely with you to understand your needs and develop cloud strategies that address your specific challenges. Whether you need enhanced security, a particular software integration, or custom-built cloud applications, we offer flexible, bespoke services designed to deliver scalable, secure, and efficient solutions.</p>
-              </div>
+            <h2 style="font-weight: bold; font-size: 1.6em; padding-top: 1rem;">Cloud & DevOps</h2>
+            <div class="accordion-container">
+                <section class="accordion">
+                  <input type="checkbox" name="collapse" id="handle5" >
+                  <h2 class="handle">
+                    <label for="handle5">AWS, Google Cloud, and Azure</label>
+                  </h2>
+                  <div class="content">
+                    <p class="service-paragraph">We offer comprehensive cloud services, including deployment and management on AWS, Google Cloud, and Microsoft Azure. Our experts help you migrate, optimize, and scale your infrastructure while ensuring high availability and security. We leverage the unique capabilities of each platform to build cloud-native applications, ensuring that your resources are flexible, cost-effective, and secure. Whether you need compute, storage, or advanced analytics, our team provides tailored solutions for your specific cloud needs.</p>
+                  </div>
+                </section>
+                <section class="accordion">
+                  <input type="checkbox" name="collapse" id="handle6">
+                  <h4 class="handle">
+                    <label for="handle6">Google Workspace, MS365, and Zoho</label>
+                  </h4>
+                  <div class="content">
+                    <p class="service-paragraph">We assist businesses in transitioning to and optimizing cloud-based productivity tools like Google Workspace, Microsoft 365, and Zoho. Our services include full deployment, user training, and ongoing support. From setting up email, calendars, and collaboration tools to integrating third-party apps and creating custom workflows, we ensure that your team has all the tools they need to work more efficiently, securely, and collaboratively, whether in the office or remotely.</p>
+                  </div>
+                </section>
+                <section class="accordion">
+                  <input type="checkbox" name="collapse" id="handle7">
+                  <h2 class="handle">
+                    <label for="handle7">GoDaddy, Cloudflare, DNS Services</label>
+                  </h2>
+                  <div class="content">
+                    <p class="service-paragraph">Our team provides reliable DNS services, domain management, and website performance optimization with providers like GoDaddy and Cloudflare. We manage your domain registrations, DNS configurations, and ensure your website's availability with Cloudflare’s CDN and DDoS protection. Additionally, we ensure faster website load times, enhanced security, and protection from cyber threats. We also offer full support for setting up and configuring email services to ensure smooth business communication.</p>
+                  </div>
+                </section>
+                <section class="accordion">
+                    <input type="checkbox" name="collapse" id="handle8">
+                    <h2 class="handle">
+                      <label for="handle8">Webmail, Bulk Email, Email Migration</label>
+                    </h2>
+                    <div class="content">
+                      <p class="service-paragraph">Our email services cover everything from setting up secure webmail solutions to bulk email campaigns and email migration. We help businesses move from outdated systems to modern, efficient email solutions, ensuring minimal downtime and smooth transitions. We also assist with bulk email campaigns, optimizing deliverability, and segmentation to increase engagement and conversions. Our team ensures that your email infrastructure is secure, scalable, and effective for both internal and marketing communications.</p>
+                    </div>
+                </section>
             </div>
+
+             <div class="accordion-container">
+                <section class="accordion">
+                    <input type="checkbox" name="collapse" id="handle9" >
+                    <h2 class="handle">
+                      <label for="handle9">Dedicated Server Rentals</label>
+                    </h2>
+                    <div class="content">
+                      <p class="service-paragraph">We provide dedicated server rental solutions tailored to your business’s needs. Whether you're running a resource-intensive application, hosting a website with high traffic, or need an isolated environment for secure data storage, our team configures and manages servers to meet your requirements. With 24/7 monitoring and support, you can rely on us to ensure your server runs smoothly, securely, and with optimal performance.</p>
+                    </div>
+                </section>
+                <section class="accordion">
+                    <input type="checkbox" name="collapse" id="handle10">
+                    <h2 class="handle">
+                      <label for="handle10">CDN with S3 & GS and Cloud Storage</label>
+                    </h2>
+                    <div class="content">
+                      <p class="service-paragraph">Our CDN (Content Delivery Network) services, integrated with S3 (Amazon Web Services) and GS (Google Cloud Storage), ensure faster content delivery and improved website performance globally. By caching content at various edge locations, we reduce latency and speed up load times for users, regardless of their geographical location. We also offer scalable cloud storage solutions for businesses to securely store and retrieve data anytime, with guaranteed uptime and fast access.</p>
+                    </div>
+                </section>
+                <section class="accordion">
+                    <input type="checkbox" name="collapse" id="handle11">
+                    <h2 class="handle">
+                      <label for="handle11">Complete Support Over Services</label>
+                    </h2>
+                    <div class="content">
+                      <p class="service-paragraph">We provide complete support for all cloud, DevOps, and IT infrastructure services. Our team offers proactive monitoring, troubleshooting, and management of your cloud resources, ensuring maximum uptime, performance, and cost-efficiency. Whether it’s optimizing your cloud architecture, migrating systems, or implementing disaster recovery plans, we’re here to provide expert assistance and ensure your cloud solutions are always running at their best.</p>
+                    </div>
+                </section>
+                <section class="accordion">
+                    <input type="checkbox" name="collapse" id="handle12">
+                    <h2 class="handle">
+                      <label for="handle12">All Custom Requirements</label>
+                    </h2>
+                    <div class="content">
+                      <p class="service-paragraph">From specialized configurations to custom cloud solutions, we provide services tailored to meet your unique business requirements. Our team works closely with you to understand your needs and develop cloud strategies that address your specific challenges. Whether you need enhanced security, a particular software integration, or custom-built cloud applications, we offer flexible, bespoke services designed to deliver scalable, secure, and efficient solutions.</p>
+                    </div>
+                </section>
+            </div>
+
           
             <!-- Hardware & Networking Section -->
-            <h2>Hardware & Networking</h2>
-            <div class="row equal-height">
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>New/Refurbished Laptops & PCs</h4>
-                <p class="service-paragraph">We offer a wide range of new and refurbished laptops and PCs, catering to both individual and business needs. Our devices are carefully selected for quality and performance, ensuring that you get the best value for your investment. We can also provide customized systems tailored to specific business requirements, whether you need high-performance machines for development, graphics, or everyday office tasks. With warranty and post-purchase support, we ensure a seamless experience for your tech setup.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>Routers, Security Firewalls</h4>
-                <p class="service-paragraph">We provide top-quality routers and security firewalls to safeguard your network and ensure seamless connectivity. Our solutions help businesses optimize internet performance while protecting against cyber threats. Whether you're setting up a small office network or a large enterprise infrastructure, we offer scalable solutions that deliver both security and speed. Our team ensures proper configuration and support for your routers and firewalls, maintaining a secure and reliable network environment.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>Dual Switchable Internet with Wifi</h4>
-                <p class="service-paragraph">Our dual switchable internet solutions allow businesses to have uninterrupted internet connectivity by using two separate internet connections (fiber, 4G, etc.). We install and configure dual-switch systems that automatically switch between internet connections in case of an outage, ensuring minimal downtime. Additionally, we provide enterprise-grade Wi-Fi networks to ensure reliable wireless connectivity across your organization, optimizing productivity without compromising on speed or performance.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>Biometric Systems with Web App</h4>
-                <p class="service-paragraph">We offer biometric authentication systems integrated with custom web applications to enhance security and access control for your business. Our biometric solutions include fingerprint, facial recognition, and iris scanning systems, which can be linked with attendance, access, and security management systems. These systems ensure a high level of security and user convenience, with real-time data synchronization to web apps for easy management and reporting.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>Printers & Other Accessories</h4>
-                <p class="service-paragraph">We supply a wide range of printers and office accessories to suit your business's needs. Whether you're looking for inkjet, laser, or multifunction printers, we offer high-quality, cost-effective solutions. We also provide other office essentials like scanners, projectors, and peripherals, ensuring that your business is well-equipped for day-to-day operations. Our team offers installation, configuration, and ongoing support for your hardware needs.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>Annual Maintenance Services</h4>
-                <p class="service-paragraph">We offer annual maintenance services for your hardware and networking infrastructure, ensuring that all systems run smoothly throughout the year. Our team performs regular checks, software updates, hardware cleaning, and performance optimization to reduce the likelihood of unexpected breakdowns. Whether it’s for servers, PCs, routers, or other devices, we ensure that your business's hardware stays in top working condition and that issues are addressed proactively before they affect your operations.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>Client Site Visit for Troubleshoot</h4>
-                <p class="service-paragraph">We offer on-site troubleshooting services to quickly diagnose and resolve issues with your hardware and networking equipment. Our technicians visit your office or facility to identify problems, perform repairs, and offer immediate solutions. Whether it’s a networking issue, hardware malfunction, or software glitch, we provide expert support to minimize downtime and ensure your systems are running at peak performance.</p>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <h4>All Custom Requirements</h4>
-                <p class="service-paragraph">We understand that every business has unique hardware and networking needs. From specialized hardware installations to custom network setups, our team works with you to create tailored solutions that meet your exact specifications. Whether you need a specific configuration, integration, or support for a particular technology, we offer flexible, bespoke services designed to fit your business’s unique requirements and provide reliable, long-term solutions.</p>
-              </div>
+            <h2 style="font-weight: bold; font-size: 1.6em; padding-top: 1rem;">Hardware & Networking</h2>
+            <div class="accordion-container">
+                <section class="accordion">
+                  <input type="checkbox" name="collapse" id="handle13" >
+                  <h2 class="handle">
+                    <label for="handle13">New/Refurbished Laptops & PCs</label>
+                  </h2>
+                  <div class="content">
+                    <p class="service-paragraph">We offer a wide range of new and refurbished laptops and PCs, catering to both individual and business needs. Our devices are carefully selected for quality and performance, ensuring that you get the best value for your investment. We can also provide customized systems tailored to specific business requirements, whether you need high-performance machines for development, graphics, or everyday office tasks. With warranty and post-purchase support, we ensure a seamless experience for your tech setup.</p>
+                  </div>
+                </section>
+                <section class="accordion">
+                  <input type="checkbox" name="collapse" id="handle14">
+                  <h4 class="handle">
+                    <label for="handle14">Routers, Security Firewalls</label>
+                  </h4>
+                  <div class="content">
+                    <p class="service-paragraph">We provide top-quality routers and security firewalls to safeguard your network and ensure seamless connectivity. Our solutions help businesses optimize internet performance while protecting against cyber threats. Whether you're setting up a small office network or a large enterprise infrastructure, we offer scalable solutions that deliver both security and speed. Our team ensures proper configuration and support for your routers and firewalls, maintaining a secure and reliable network environment.</p>
+                  </div>
+                </section>
+                <section class="accordion">
+                  <input type="checkbox" name="collapse" id="handle15">
+                  <h2 class="handle">
+                    <label for="handle15">Dual Switchable Internet with Wifi</label>
+                  </h2>
+                  <div class="content">
+                    <p class="service-paragraph">Our dual switchable internet solutions allow businesses to have uninterrupted internet connectivity by using two separate internet connections (fiber, 4G, etc.). We install and configure dual-switch systems that automatically switch between internet connections in case of an outage, ensuring minimal downtime. Additionally, we provide enterprise-grade Wi-Fi networks to ensure reliable wireless connectivity across your organization, optimizing productivity without compromising on speed or performance.</p>
+                  </div>
+                </section>
+                <section class="accordion">
+                    <input type="checkbox" name="collapse" id="handle16">
+                    <h2 class="handle">
+                      <label for="handle16">Biometric Systems with Web App</label>
+                    </h2>
+                    <div class="content">
+                      <p class="service-paragraph">We offer biometric authentication systems integrated with custom web applications to enhance security and access control for your business. Our biometric solutions include fingerprint, facial recognition, and iris scanning systems, which can be linked with attendance, access, and security management systems. These systems ensure a high level of security and user convenience, with real-time data synchronization to web apps for easy management and reporting.</p>
+                    </div>
+                </section>
             </div>
-          
-          
 
-
-
-    </div>
+             <div class="accordion-container">
+                <section class="accordion">
+                    <input type="checkbox" name="collapse" id="handle17" >
+                    <h2 class="handle">
+                      <label for="handle17">Printers & Other Accessories</label>
+                    </h2>
+                    <div class="content">
+                      <p class="service-paragraph">We supply a wide range of printers and office accessories to suit your business's needs. Whether you're looking for inkjet, laser, or multifunction printers, we offer high-quality, cost-effective solutions. We also provide other office essentials like scanners, projectors, and peripherals, ensuring that your business is well-equipped for day-to-day operations. Our team offers installation, configuration, and ongoing support for your hardware needs.</p>
+                    </div>
+                </section>
+                <section class="accordion">
+                    <input type="checkbox" name="collapse" id="handle18">
+                    <h2 class="handle">
+                      <label for="handle18">Annual Maintenance Services</label>
+                    </h2>
+                    <div class="content">
+                      <p class="service-paragraph">We offer annual maintenance services for your hardware and networking infrastructure, ensuring that all systems run smoothly throughout the year. Our team performs regular checks, software updates, hardware cleaning, and performance optimization to reduce the likelihood of unexpected breakdowns. Whether it’s for servers, PCs, routers, or other devices, we ensure that your business's hardware stays in top working condition and that issues are addressed proactively before they affect your operations.</p>
+                    </div>
+                </section>
+                <section class="accordion">
+                    <input type="checkbox" name="collapse" id="handle19">
+                    <h2 class="handle">
+                      <label for="handle19">Client Site Visit for Troubleshoot</label>
+                    </h2>
+                    <div class="content">
+                      <p class="service-paragraph">We offer on-site troubleshooting services to quickly diagnose and resolve issues with your hardware and networking equipment. Our technicians visit your office or facility to identify problems, perform repairs, and offer immediate solutions. Whether it’s a networking issue, hardware malfunction, or software glitch, we provide expert support to minimize downtime and ensure your systems are running at peak performance.</p>
+                    </div>
+                </section>
+                <section class="accordion">
+                    <input type="checkbox" name="collapse" id="handle20">
+                    <h2 class="handle">
+                      <label for="handle20">All Custom Requirements</label>
+                    </h2>
+                    <div class="content">
+                      <p class="service-paragraph">We understand that every business has unique hardware and networking needs. From specialized hardware installations to custom network setups, our team works with you to create tailored solutions that meet your exact specifications. Whether you need a specific configuration, integration, or support for a particular technology, we offer flexible, bespoke services designed to fit your business’s unique requirements and provide reliable, long-term solutions.</p>
+                    </div>
+                </section>
+            </div>
+        </div>
       
 
 
 
     <div class="footer-bottom" id="contact">
 
-        <div class="text-center" ><h1>Contact Us</h1></div>
+        <div class="text-center" ><h1 style="font-size: 3rem;  font-weight: bold;">Contact Us</h1></div>
 
         <div class="container">
             <div class="row">
@@ -888,13 +487,26 @@
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <ul class="list-unstyled footer-social">
                         <li> <a href="https://www.facebook.com/rwAdilabad" target="_blank" alt="R&W Adilabad Facebook">
-                                <i class="fa fa-facebook"></i> </a> </li>
-                        <li> <a href="https://www.instagram.com/rwAdilabad" target="_blank"
-                                alt="R&W Adilabad Instagram"> <i class="fa fa-instagram"></i> </a> </li>
-                        <li> <a href="https://twitter.com/rwAdilabad" target="_blank" alt="R&W Adilabad Twitter"> <i
-                                    class="fa fa-twitter"></i> </a> </li>
-                        <li> <a href="https://www.youtube.com/user/rwAdilabad" target="_blank"
-                                alt="R&W Adilabad Youtube"> <i class="fa fa-youtube"></i> </a> </li>
+                                <i class="fa fa-facebook"></i> 
+                             </a> 
+                        </li>
+                        <li> <a href="https://www.instagram.com/rwAdilabad" target="_blank" alt="R&W Adilabad Instagram"> 
+                                <i class="fa fa-instagram"></i> 
+                            </a> 
+                        </li>
+                        <li> <a href="https://twitter.com/rwAdilabad" target="_blank" alt="R&W Adilabad Twitter"> 
+                                <i class="fa fa-twitter"></i> 
+                            </a> 
+                        </li>
+                        <li> <a href="https://www.youtube.com/user/rwAdilabad" target="_blank" alt="R&W Adilabad Youtube"> 
+                                <i class="fa fa-youtube"></i> 
+                            </a> 
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/rwAdilabad" target="_blank" aria-label="R&W Adilabad LinkedIn">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>          
                     </ul>
                 </div>
     
@@ -904,86 +516,9 @@
             </div> 
 
         </div>
-        <!-- <div class="container">
-            <div class="row">
-                <div class="col-1-of-5">
-                    <div class="footer-menu">
-                        <h5>Buy</h5>
-                        <ul class="list-unstyled">
-                            <li> <a href="listings?type=Buy">Property For Sale</a> </li>
-                            <li> <a href="auction">Current Auction Properties</a> </li>
-                        </ul> <br>
-                        <h5>Site Links</h5>
-                        <ul class="list-unstyled">
-                            <li> <a href="index.html">Home</a> </li>
-                            <li> <a href="site-map">Site Map</a> </li>
-                            <li> <a href="privacy-policy">Privacy Policy</a> </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-1-of-5">
-                    <div class="footer-menu">
-                        <h5>Rent</h5>
-                        <ul class="list-unstyled">
-                            <li> <a href="?type=Rent">PROPERTY FOR RENT</a> </li>
-                            <li> <a href="">PG / HOSTEL</a> </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-1-of-5">
-                    <div class="footer-menu">
-                        <h5>Sell</h5>
-                        <ul class="list-unstyled">
-                            <li> <a href="buying-at-auction">POST YOUR PROPERTY</a> </li>
-                            <li> <a href="listings?type=Sold">SELL AD PACKAGES</a> </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-1-of-5">
-                    <div class="footer-menu">
-                        <h5>About</h5>
-                        <ul class="list-unstyled">
-                            <li> <a href="aboutus.html">About Us</a> </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-1-of-5">
-                    <div class="footer-menu">
-                        <h5>Contact</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="contact">Contact Us / Enquire</a></li>
-                            <li> 23 Manchriyal Street,<br> Adilabad Heads QLD 4567 </li>
-                            <li>Phone: (91) 1234 4567</li>
-                            <li>Fax: (91) 1234 4567</li>
-                        </ul>
-                        <ul class="list-unstyled footer-social">
-                            <li> <a href="https://www.facebook.com/rwAdilabad" target="_blank" alt="R&W Adilabad Facebook">
-                                    <i class="fa fa-facebook"></i> </a> </li>
-                            <li> <a href="https://www.instagram.com/rwAdilabad" target="_blank"
-                                    alt="R&W Adilabad Instagram"> <i class="fa fa-instagram"></i> </a> </li>
-                            <li> <a href="https://twitter.com/rwAdilabad" target="_blank" alt="R&W Adilabad Twitter"> <i
-                                        class="fa fa-twitter"></i> </a> </li>
-                            <li> <a href="https://www.youtube.com/user/rwAdilabad" target="_blank"
-                                    alt="R&W Adilabad Youtube"> <i class="fa fa-youtube"></i> </a> </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom-copyright"> <span> Copyright © 2024 The Manage Mate <br> All rights reserved
-                </span> </div> <small class="footer-copyright-notice"> Every precaution has been taken to establish
-                accuracy of the above information but does not constitute any representation by the vendor or agent.
-            </small>
-        </div> -->
     </div>
 
     <script src="bundle.js" defer async></script>
-    <!-- <script type="text/javascript" src="local_js/search.js"></script>
-    <script type="text/javascript" src="local_js/infobox.js"></script>
-    <script type="text/javascript" src="local_js/share.js"></script>
-    <script type="text/javascript" src="local_js/blog_detail.js"></script>
-    <script type="text/javascript" src="local_js/form_validation.js"></script>
-    <script type="text/javascript" src="local_js/lity.min.js"></script>
-    <script type="text/javascript" src="local_js/slick.min.js"></script> -->
     <script type="text/javascript" src="local_js/app.js"></script>
     <!-- <script type="text/javascript" src="local_js/typeahead.bundle.min.js"></script>
     <script type="text/javascript" src="local_js/jquery.magnific_popup.min.js"></script> -->
