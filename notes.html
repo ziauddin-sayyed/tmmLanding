@@ -361,7 +361,7 @@
             var isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
             var newPageUrl = fileUrl;
             if(isMobile){
-                newPageUrl = 'https://docs.google.com/viewerng/viewer?url=' + encodeURIComponent(fileUrl);
+                newPageUrl = 'https://docs.google.com/viewerng/viewer?url=' + encodeURIComponent('https://themanagemate.com/'+fileUrl);
             }
             
             window.open(newPageUrl, "_blank"); // Open the new page in a new tab
