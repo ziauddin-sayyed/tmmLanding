@@ -51,7 +51,7 @@
 .accordion label {
   color: #333;
   cursor: pointer;
-  font-weight: normal;
+  font-weight: 600;
   padding: 15px;
   background: #e8e8e8;
 }
