@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduHunt Joining Page - TheManageMate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Loading overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #ffffff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Loading overlay -->
+    <div class="overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Container for centering -->
+    <div class="flex justify-center items-center min-h-screen p-4">
+        <!-- Main form container with width constraints for desktop -->
+        <div class="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
+            
+            <!-- Wide image on top -->
+            <div class="mb-6">
+                <h1 class="text-3xl font-bold text-center   text-amber-600">Join EduHunt Network!</h1>
+                <img src="./banner.png" alt="Wide Image" class="w-full h-auto object-cover rounded-t-lg">
+            </div>
+            
+            <!-- Form Start -->
+            <form id="teacherForm">
+                
+                <!-- Name field -->
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 text-sm font-semibold mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600" required>
+                </div>
+
+                <!-- Email field -->
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                </div>
+
+                <!-- Phone field -->
+                <div class="mb-4">
+                    <label for="phone" class="block text-gray-700 text-sm font-semibold mb-2">Phone</label>
+                    <input type="text" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                </div>
+
+                <!-- Landmark field -->
+                <div class="mb-4">
+                    <label for="landmark" class="block text-gray-700 text-sm font-semibold mb-2">Landmark</label>
+                    <input type="text" id="landmark" name="landmark" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                </div>
+
+                <!-- Area field -->
+                <div class="mb-4">
+                    <label for="area" class="block text-gray-700 text-sm font-semibold mb-2">Area</label>
+                    <input type="text" id="area" name="area" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                </div>
+
+                <!-- City field -->
+                <div class="mb-4">
+                    <label for="city" class="block text-gray-700 text-sm font-semibold mb-2">City</label>
+                    <input type="text" id="city" name="city" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                </div>
+
+                <!-- State field -->
+                <div class="mb-4">
+                    <label for="state" class="block text-gray-700 text-sm font-semibold mb-2">State</label>
+                    <input type="text" id="state" name="state" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                </div>
+
+                <!-- Which subject do you want to teach? -->
+                <div class="mb-4">
+                    <label for="subject" class="block text-gray-700 text-sm font-semibold mb-2">Which subject do you want to teach?</label>
+                    <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600" required>
+                </div>
+
+                <!-- Mode of teaching (online/offline/both) -->
+                <div class="mb-4">
+                    <label for="teaching_mode" class="block text-gray-700 text-sm font-semibold mb-2">Mode of teaching</label>
+                    <select id="teaching_mode" name="teaching_mode" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                        <option value="online">Online</option>
+                        <option value="offline">Offline</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+
+                <!-- Type of teaching -->
+                <div class="mb-4">
+                    <label for="teaching_type" class="block text-gray-700 text-sm font-semibold mb-2">Type of teaching</label>
+                    <select id="teaching_type" name="teaching_type" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                        <option value="private_tuition">Private Tuition</option>
+                        <option value="coaching_class">Coaching Class</option>
+                        <option value="home_tuition">Home Tuition</option>
+                        <option value="all">All</option>
+                    </select>
+                </div>
+
+                <!-- Submit button -->
+                <div>
+                    <button type="submit" class="w-full bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="successAlert" class="fixed top-0 left-1/2 transform -translate-x-1/2 mt-10 px-6 py-4 bg-amber-500 text-white text-lg rounded-lg shadow-lg hidden">
+        <span id="alertMessage">Thank you for registration!</span>
+        <button onclick="closeAlert()" class="ml-4 text-xl font-bold">&times;</button>
+    </div>
+    
+    <script>
+        // Form submission handling
+        document.getElementById('teacherForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form from submitting normally
+
+            // Get form data
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const submitButton = document.querySelector('button[type="submit"]');
+
+            submitButton.disabled = true;
+
+            // Check if at least one of email or phone is filled
+            if (!email && !phone) {
+                alert("Please provide either your email or phone number.");
+                return;
+            }
+
+            // Show loading overlay
+            document.getElementById('loadingOverlay').style.display = 'flex';
+
+            const formData = new FormData(this);
+
+            fetch('https://script.google.com/macros/s/AKfycbyQO5DXSUzNslzHF0N3pXF9PW-4hNx9MhFkUhIFyjbBAFAPEL54fj931BcM7CEMEk-P/exec', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.text())
+            .then(result => {
+                // alert("Form submitted successfully!");
+                showAlert("Form submitted successfully!");
+                document.getElementById('teacherForm').reset(); // Reset form after submission
+                document.getElementById('loadingOverlay').style.display = 'none'; // Hide loading overlay
+                submitButton.disabled = false;
+
+            })
+            .catch(error => {
+                console.error("Error submitting form:", error);
+                alert("There was an error. Please try again.");
+                document.getElementById('loadingOverlay').style.display = 'none'; // Hide loading overlay
+            });
+        });
+        function showAlert(message) {
+            const alertMessage = document.getElementById('alertMessage');
+            alertMessage.textContent = message;
+            const alertElement = document.getElementById('successAlert');
+            alertElement.classList.remove('hidden');
+        }
+
+        // Function to close the alert
+        function closeAlert() {
+            const alertElement = document.getElementById('successAlert');
+            alertElement.classList.add('hidden');
+        }
+
+
+    </script>
+
+</body>
+</html>
