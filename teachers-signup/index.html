@@ -53,6 +53,10 @@
 </script>
 
     <script src="../css/tailwind.js"></script>
+    <script src="../css/tailwind.config.js"></script>
+
+    
+
     <style>
         /* Loading overlay */
         .overlay {
@@ -79,6 +83,46 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+  .chip-checkbox {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 3px;
+    background-color: #f3f4f6; /* Tailwind bg-gray-100 */
+    color: #374151; /* Tailwind text-gray-700 */
+    border-radius: 9999px; /* Tailwind rounded-full */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .chip-checkbox:hover {
+    background-color: #e5e7eb; /* Tailwind hover:bg-gray-200 */
+  }
+
+  .chip-checkbox-span {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem; /* Tailwind text-sm */
+    background-color: #e5e7eb; /* Tailwind bg-gray-200 */
+    color: #374151; /* Tailwind text-gray-700 */
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .chip-checkbox input[type="checkbox"] {
+    display: none;
+  }
+
+  /* When the checkbox is checked */
+  .chip-checkbox input[type="checkbox"]:checked + .chip-checkbox-span {
+    background-color: #e67500; /* Tailwind peer-checked:bg-blue-500 */
+    color: white; /* Tailwind peer-checked:text-white */
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    border: 2px solid #e67500; /* Tailwind peer-checked:ring-2 and peer-checked:ring-blue-500 */
+  }
+
     </style>
 </head>
 <body class="bg-gray-100">
@@ -139,12 +183,31 @@
                 </div>
 
                 <!-- State field -->
-                <div class="mb-4">
-                    <label for="state" class="block text-gray-700 text-sm font-semibold mb-2">State</label>
-                    <input type="text" id="state" name="state" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                 <hr>
+                <div class="max-w-md mx-auto mt-5">
+                    <label for="multiselect">Standards:</label>
+                    <div class="space-y-2">
+                        <label class="chip-checkbox" ><input type="checkbox" value="X" class="standards">   <span class="chip-checkbox-span">X <sup>th</sup>   </span>                 </label>
+                        <label class="chip-checkbox" ><input type="checkbox" value="XI" class="standards">  <span class="chip-checkbox-span">XI <sup>th</sup>  </span>                 </label>
+                        <label class="chip-checkbox" ><input type="checkbox" value="XII" class="standards"> <span class="chip-checkbox-span">XII <sup>th</sup> </span>                 </label>
+                        <label class="chip-checkbox" ><input type="checkbox" value="FY" class="standards">  <span class="chip-checkbox-span">FY                </span>     </label>
+                        <label class="chip-checkbox" ><input type="checkbox" value="SY" class="standards">  <span class="chip-checkbox-span">SY                </span>     </label>
+                        <label class="chip-checkbox" ><input type="checkbox" value="TY" class="standards">  <span class="chip-checkbox-span">TY                </span>     </label>
+                      </div>
                 </div>
-
+                
+                <div class="max-w-md mx-auto mt-5">
+                    <label for="multiselect">Boards:</label>
+                    <div class="space-y-2">
+                        <label class="chip-checkbox" ><input type="checkbox" value="CBSE" class="boards">        <span class="chip-checkbox-span" >  CBSE   </span> </label>
+                        <label class="chip-checkbox" ><input type="checkbox" value="NCERT" class="boards">       <span class="chip-checkbox-span" >  NCERT  </span> </label>
+                        <label class="chip-checkbox" ><input type="checkbox" value="ICSE" class="boards">        <span class="chip-checkbox-span" >  ICSE  </span> </label>
+                        <label class="chip-checkbox" ><input type="checkbox" value="NIOGS" class="boards">       <span class="chip-checkbox-span" >  NIOGS  </span> </label>
+                        <label class="chip-checkbox" ><input type="checkbox" value="State Board" class="boards"> <span class="chip-checkbox-span" >  State Board  </span> </label>
+                      </div>
+                </div>
                 <!-- Which subject do you want to teach? -->
+                 <br>
                 <div class="mb-4">
                     <label for="subject" class="block text-gray-700 text-sm font-semibold mb-2">Which subject do you want to teach?</label>
                     <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600" required>
@@ -201,12 +264,18 @@
                 return;
             }
 
-            // Show loading overlay
             document.getElementById('loadingOverlay').style.display = 'flex';
 
             const formData = new FormData(this);
 
-            fetch('https://script.google.com/macros/s/AKfycbyQO5DXSUzNslzHF0N3pXF9PW-4hNx9MhFkUhIFyjbBAFAPEL54fj931BcM7CEMEk-P/exec', {
+            const standards = document.querySelectorAll('.standards:checked');
+            formData.append('standards', Array.from(standards).map(checkbox => checkbox.value).join('\n'));
+
+            const boards = document.querySelectorAll('.boards:checked');
+            formData.append('boards', Array.from(boards).map(checkbox => checkbox.value).join('\n'));
+
+            
+            fetch('https://script.google.com/macros/s/AKfycbwLJtvM2Jd1rJLiwr2oxHq_GyyB1IwQI3G3zwOEJ5AslcfkXzMNiA2BkYPy3ITb7WDb/exec', {
                 method: 'POST',
                 body: formData,
             })
@@ -237,7 +306,26 @@
             const alertElement = document.getElementById('successAlert');
             alertElement.classList.add('hidden');
         }
-
+        const button = document.getElementById('multiselectBtn');
+                    const options = document.getElementById('multiselectOptions');
+                  
+                    button.addEventListener('click', () => {
+                      options.classList.toggle('hidden');
+                    });
+                  
+                    // Optionally, you can capture the selected options and handle them as needed
+                    const checkboxes = options.querySelectorAll('input[type="checkbox"]');
+                    checkboxes.forEach(checkbox => {
+                      checkbox.addEventListener('change', () => {
+                        const selectedOptions = [];
+                        checkboxes.forEach(chk => {
+                          if (chk.checked) {
+                            selectedOptions.push(chk.value);
+                          }
+                        });
+                        console.log('Selected options:', selectedOptions);
+                      });
+                    });
 
     </script>
 
