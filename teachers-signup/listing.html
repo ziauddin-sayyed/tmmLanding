@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduHunt Joining Page - TheManageMate</title>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="The Manage Mate">
+    <meta property="og:title" content="EduHunt Search Page - The Manage Mate Tech Services: Web, App Development, Cloud & Networking Solutions">
+    <meta property="og:description" content="Best technology firm based in Mumbai providing web and app development, cloud services, hardware, networking, and more. Custom solutions for all business needs.">
+    <meta property="og:image" content="https://themanagemate.com/teachers-signup/banner.png">
+    <!-- /home/kido1/Downloads/sageunani.pem -->
+    <meta property="og:url" content="https://themanagemate.com/teachers-signup/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="The Manage Mate">
+
+    <link rel="canonical" href="https://themanagemate.com/teachers-signup/listing">
+    <link rel="icon" href="./banner.png" type="image/x-icon">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "EduHunt-The Manage Mate",
+          "url": "https://themanagemate.com",
+          "logo": "https://themanagemate.com/teachers-signup/banner.png",
+          "sameAs": [
+            "https://www.facebook.com/yourcompany",
+            "https://twitter.com/yourcompany",
+            "https://www.linkedin.com/company/yourcompany"
+          ],
+          "contactPoint": {
+            "@type": "Sayyed",
+            "telephone": "+91-7208649034",
+            "contactType": "Customer Service",
+            "areaServed": "IN",
+            "availableLanguage": "English"
+          }
+        }
+    </script>
+
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E8545R59JM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-E8545R59JM');
+</script>
+
+
+
+<script src="../css/tailwind.js"></script>
+  <style>
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal.active {
+      display: flex;
+    }
+    .bg-theme-color{
+        background-color: #e67500; 
+    }
+    #close-modal {
+      color: white;              
+      padding: 1vh;         
+      border: none;              
+      border-radius: 25px;        
+      font-size: 4vh;           
+      cursor: pointer;          
+      width: 5vh;
+      height: 5vh;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Container -->
+
+  <div class="mb-1">
+    <img src="./banner.png" alt="Wide Image" class="w-full h-auto object-cover rounded-t-lg">
+    <h1 class="text-2xl font-bold text-center   text-amber-600">Search a Teacher</h1>
+    </div>
+
+
+  <div class="container mx-auto p-6">
+
+    <!-- Cards Section -->
+    <input type="text" id="search-input" placeholder="Search Location, Subject, Board etc" class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+    <hr><br>
+    <div id="cards-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+
+
+    <!-- Show More Button -->
+    <button id="show-more-btn" class="bg-theme-color mt-6 px-4 py-2 text-white rounded focus:outline-none">Loading Please Wait...</button>
+    
+  </div>
+
+  <!-- Modal for Viewing More Info -->
+  <div id="modal" class="modal">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+      <button id="close-modal" class="absolute top-2 right-2 text-xl font-bold bg-theme-color text-red-900">&times;</button>
+      <h2 id="modal-title" class="text-2xl font-semibold mb-4">Details</h2>
+      <p id="modal-content" class="text-gray-700"></p>
+    </div>
+  </div>
+
+  <script>
+    const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR5JO3fklNjWdcbNE-Yxwq9Vd4qJPcdIYhgfXqLO11IiGt-9XEBxnsoQQP0l2828xhnuOg8nEEtxcCl/pub?gid=0&single=true&output=csv';
+    let currentOffset = 0;
+    const chunkSize = 15;
+    let data = [];
+    let headers = [];
+    
+    // Function to fetch and parse CSV data from Google Sheets
+
+    async function fetchData() {
+      const showMoreBtn = document.getElementById('show-more-btn');
+      showMoreBtn.textContent = 'Loading Please Wait...'; // Set initial button text
+      showMoreBtn.disabled = true; // Disable button while loading
+
+      const response = await fetch(sheetUrl);
+      const csv = await response.text();
+      parseCSV(csv);
+
+      showMoreBtn.textContent = 'Show More'; // Change button text after data is loaded
+      showMoreBtn.disabled = false; // Re-enable button
+    }
+
+    function parseCSV(csv) {
+      const rows = csv.split('\n').map(row => row.split(','));
+      headers = rows[0]; // Extract headers
+      data.push(...rows.slice(1)); // Store data excluding header row
+      loadData(); // Load initial set of data
+    }
+
+    function loadData() {
+      const container = document.getElementById('cards-container');
+      const end = Math.min(currentOffset + chunkSize, data.length);
+      
+      for (let i = currentOffset; i < end; i++) {
+        const entry = data[i];
+        const card = document.createElement('div');
+        card.className = 'bg-white shadow-lg rounded-lg p-4 cursor-pointer hover:shadow-xl transition-shadow duration-200';
+        card.innerHTML = `
+          <h3 class="font-semibold text-lg">${entry[0]}</h3>
+          <p class="text-gray-500">${entry[1]}</p>
+          <p class="text-gray-700">${entry[2]}</p>
+        `;
+        card.addEventListener('click', () => openModal(entry));
+        container.appendChild(card);
+      }
+
+      currentOffset = end;
+      if (currentOffset >= data.length) {
+        document.getElementById('show-more-btn').disabled = true;
+        document.getElementById('show-more-btn').textContent = 'No More Data';
+      }
+    }
+
+    function openModal(entry) {
+      const modal = document.getElementById('modal');
+      const modalTitle = document.getElementById('modal-title');
+      const modalContent = document.getElementById('modal-content');
+      modalTitle.innerText = entry[0];
+      
+      let detailsHtml = '<strong>Details:</strong><ul>';
+      headers.forEach((header, index) => {
+        detailsHtml += `<li><strong>${header}:</strong> ${entry[index] || 'N/A'}</li>`;
+      });
+      detailsHtml += '</ul>';
+      
+      modalContent.innerHTML = detailsHtml;
+      modal.classList.add('active');
+    }
+
+    document.getElementById('close-modal').addEventListener('click', () => {
+      document.getElementById('modal').classList.remove('active');
+    });
+
+    document.getElementById('show-more-btn').addEventListener('click', loadData);
+
+    fetchData(); // Initial data fetch
+
+
+  </script>
+
+</body>
+</html>
