@@ -121,7 +121,8 @@
   </div>
 
   <script>
-    const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR5JO3fklNjWdcbNE-Yxwq9Vd4qJPcdIYhgfXqLO11IiGt-9XEBxnsoQQP0l2828xhnuOg8nEEtxcCl/pub?gid=0&single=true&output=csv';
+    // const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR5JO3fklNjWdcbNE-Yxwq9Vd4qJPcdIYhgfXqLO11IiGt-9XEBxnsoQQP0l2828xhnuOg8nEEtxcCl/pub?gid=0&single=true&output=csv';
+    const sheetUrl = 'https://spreadsheets.google.com/feeds/list/2PACX-1vR5JO3fklNjWdcbNE-Yxwq9Vd4qJPcdIYhgfXqLO11IiGt-9XEBxnsoQQP0l2828xhnuOg8nEEtxcCl/od6/public/values?alt=json';
     let currentOffset = 0;
     const chunkSize = 15;
     let data = [];
@@ -136,7 +137,9 @@
 
       const response = await fetch(sheetUrl);
       const csv = await response.text();
-      parseCSV(csv);
+      console.log(csv);
+      
+      // parseCSV(csv);
 
       showMoreBtn.textContent = 'Show More'; // Change button text after data is loaded
       showMoreBtn.disabled = false; // Re-enable button
@@ -144,6 +147,7 @@
 
     function parseCSV(csv) {
       const rows = csv.split('\n').map(row => row.split(','));
+      // console.log(rows);
       headers = rows[0]; // Extract headers
       data.push(...rows.slice(1)); // Store data excluding header row
       loadData(); // Load initial set of data
